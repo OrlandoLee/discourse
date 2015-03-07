@@ -410,6 +410,10 @@ class UsersController < ApplicationController
 
     @email_token = @user.email_tokens.unconfirmed.active.first
     enqueue_activation_email if @user
+    
+    #comment out confirmation  for now
+    EmailToken.confirm(@email_token)
+    
     render nothing: true
   end
 
