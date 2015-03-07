@@ -8,7 +8,7 @@ https://github.com/OrlandoLee/discourse/blob/master/docs/DEVELOPMENT-OSX-NATIVE.
 https://meta.discourse.org/t/how-to-install-my-customized-repo-of-discourse-on-production-server/23364/5
 
 #useful command
-./launcher enter app</br>
-pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start </br>
-    postgres -D /usr/local/var/postgres </br>
-    pg_ctl -D /usr/local/var/postgres -l logfile start </br>
+- ./launcher enter app
+- pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start </br>
+-   postgres -D /usr/local/var/postgres </br>
+-    pg_ctl -D /usr/local/var/postgres -l logfile start </br>
