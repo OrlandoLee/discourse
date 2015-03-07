@@ -12,3 +12,4 @@ https://meta.discourse.org/t/how-to-install-my-customized-repo-of-discourse-on-p
 - pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start </br>
 -   postgres -D /usr/local/var/postgres </br>
 -    pg_ctl -D /usr/local/var/postgres -l logfile start </br>
+- SiteSetting.default_locale = 'zh_CN'
