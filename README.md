@@ -6,3 +6,6 @@ https://github.com/OrlandoLee/discourse/blob/master/docs/DEVELOPMENT-OSX-NATIVE.
 
 #use your own repo
 https://meta.discourse.org/t/how-to-install-my-customized-repo-of-discourse-on-production-server/23364/5
+
+#useful command
+./launcher enter app
