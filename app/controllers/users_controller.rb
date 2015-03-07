@@ -371,9 +371,12 @@ class UsersController < ApplicationController
   end
 
   def account_created
-    @message = session['user_created_message']
-    expires_now
-    render layout: 'no_ember'
+    #at this point do not require user to confirm email
+    email = Nokogiri::HTML(session['user_created_message']).search('b').first.content
+    if User.find_by_email(email).email_tokens.first.present?
+      redirect_to :controller => 'users', :action => 'activate_account', :token => User.find_by_email(email).email_tokens.first.token
+    end
+    #end at this point
   end
 
   def activate_account
@@ -411,8 +414,6 @@ class UsersController < ApplicationController
     @email_token = @user.email_tokens.unconfirmed.active.first
     enqueue_activation_email if @user
     
-    #comment out confirmation  for now
-    EmailToken.confirm(@email_token)
     
     render nothing: true
   end
