@@ -15,8 +15,8 @@ https://meta.discourse.org/t/how-to-install-my-customized-repo-of-discourse-on-p
 - SiteSetting.default_locale = 'zh_CN'
 - 
 #backup and restore
-- pg_dump dbname > outfile
-- psql dbname < infile
+- sudo -u postgres pg_dump discourse > outfile
+- sudo -u postgres psql discourse < infile
 
 #swap
 - sudo install -o root -g root -m 0600 /dev/null /swapfile
