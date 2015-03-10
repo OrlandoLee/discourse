@@ -37,11 +37,3 @@
 <% elsif params[:page] %>
   <% content_for :title do %><%=t 'page_num', num: params[:page].to_i + 1 %><% end %>
 <% end %>
-
-<script>
-mixpanel.track("visit to home page");
-mixpanel.identify(<%=current_user.id%>);
-mixpanel.people.set({
-    "$email": "<%=current_user.email%>"
-});
-</script>
