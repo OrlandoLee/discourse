@@ -15,7 +15,10 @@ https://meta.discourse.org/t/how-to-install-my-customized-repo-of-discourse-on-p
 - SiteSetting.default_locale = 'zh_CN'
 - 
 #backup and restore
-- sudo -u postgres pg_dump -Fc discourse > db.dump
+- from target host's docker container
+- inside docker: sudo -u postgres pg_dump -Fc discourse > db.dump
+- in var/discourse: docker cp app:db.dump .
+- inside another machine's docker: scp root@chuochuo.me:/var/discourse/db.dump .
 - sudo -u postgres pg_restore -C -d postgres db.dump
 
 #swap
