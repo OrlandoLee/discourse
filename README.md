@@ -19,7 +19,9 @@ https://meta.discourse.org/t/how-to-install-my-customized-repo-of-discourse-on-p
 - inside docker: sudo -u postgres pg_dump -Fc discourse > db.dump
 - in var/discourse: docker cp app:db.dump .
 - inside another machine's docker: scp root@chuochuo.me:/var/discourse/db.dump .
-- sudo -u postgres pg_restore -C -d postgres db.dump
+- sudo -u postgres dropdb discourse
+- sudo -u postgres createdb discourse
+- sudo -u postgres pg_restore -C -d discourse db.dump
 
 #swap
 - sudo install -o root -g root -m 0600 /dev/null /swapfile
